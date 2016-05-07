@@ -46,11 +46,11 @@
 		</bean>
 	</beans>
 
-	<beans>
+<!-- 	<beans>
 		<jdbc:initialize-database enabled="${xdiamond.initDatabase:false}">
 			<jdbc:script location="classpath:database/schema-dev.sql" />
 			<jdbc:script location="classpath:database/data-dev.sql" />
 		</jdbc:initialize-database>
 	</beans>
-
+ -->
 </beans>
