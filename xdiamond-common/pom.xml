@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>io.github.hengyunabc.xdiamond</groupId>
+		<groupId>io.github.dist.xdiamond</groupId>
 		<artifactId>xdiamond-rootpom</artifactId>
 		<version>1.0.1</version>
 	</parent>

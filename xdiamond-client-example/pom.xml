@@ -16,7 +16,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>io.github.hengyunabc.xdiamond</groupId>
+			<groupId>io.github.dist.xdiamond</groupId>
 			<artifactId>xdiamond-client</artifactId>
 			<version>1.0.1</version>
 		</dependency>

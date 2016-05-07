@@ -8,7 +8,7 @@
 		<version>9</version>
 	</parent>
 
-	<groupId>io.github.hengyunabc.xdiamond</groupId>
+	<groupId>io.github.dist.xdiamond</groupId>
 	<artifactId>xdiamond-rootpom</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.1</version>
@@ -16,7 +16,26 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
+	
+<!--============== 配置私服START =============== -->
+	<repositories>
+		<!-- 仓库地址 -->
+		<repository>
+			<id>nexus</id>
+			<name>Team Nexus Repository</name>
+			<url>http://127.0.0.1:9999/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<!-- 插件地址 -->
+		<pluginRepository>
+			<id>nexus</id>
+			<name>Team Nexus Repository</name>
+			<url>http://127.0.0.1:9999/nexus/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<!--============== 配置私服End =============== -->
+	
 	<name>xdiamond-rootpom</name>
 	<description>Xdiamond is a project contains distributed configuration server and client.</description>
 	<url>https://github.com/hengyunabc/xdiamond</url>
@@ -49,6 +68,7 @@
 		<module>xdiamond-common</module>
 		<module>xdiamond-client</module>
 		<module>xdiamond-server</module>
+		<module>xdiamond-client-example</module>
 	</modules>
 
 	<profiles>
