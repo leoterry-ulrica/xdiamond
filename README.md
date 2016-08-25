@@ -91,3 +91,9 @@ maven依赖已经发布到中央仓库：http://search.maven.org/#search%7Cga%7C
     <version>1.0.1</version>
 </dependency>
 ```
+
+## 升级日志
+>### 2015-08-25
+>
+> 1. 添加对oracle支持
+    添加相关sql，独立一个工程。
