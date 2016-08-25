@@ -14,7 +14,7 @@ import io.github.xdiamond.client.event.ConfigEvent;
 @EnableConfigListener
 public class ListenerXmlBean {
 
-  @OneKeyListener(key = "testOneKeyListener")
+  @OneKeyListener(key = "mode")
   public void testOneKeyListener(ConfigEvent event) {
     System.err.println("ListenerXmlBean, testOneKeyListener, event :" + event);
   }

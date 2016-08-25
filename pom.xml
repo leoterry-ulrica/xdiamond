@@ -68,6 +68,7 @@
 		<module>xdiamond-common</module>
 		<module>xdiamond-client</module>
 		<module>xdiamond-server</module>
+		<module>xdiamond-server-orcl</module>
 		<module>xdiamond-client-example</module>
 	</modules>
 

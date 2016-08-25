@@ -11,27 +11,27 @@
 
 	<bean id="xDiamondConfig"
 		class="io.github.xdiamond.client.spring.XDiamondConfigFactoryBean">
-		<property name="serverHost" value="${xdiamond.server.host:192.168.66.61}" />
+		<property name="serverHost" value="${xdiamond.server.host:192.168.1.166}" />
 		<property name="serverPort" value="5678" />
-		<property name="groupId" value="io.github.xdiamond" />
-		<property name="artifactId" value="xdiamond-client-example" />
-		<property name="version" value="0.0.1-SNAPSHOT" />
+		<property name="groupId" value="com.dist" />
+		<property name="artifactId" value="distconf-common" />
+		<property name="version" value="1.0.0" />
 		<property name="profile" value="${xdiamond.project.profile:dev}" />
 		<property name="secretKey" value="${xdiamond.project.secretkey:123456}"></property>
 	</bean>
 
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="propertiesArray">
+	<!-- 	<property name="propertiesArray">
 			<util:list>
-			<!-- 对于本地临时要修改的配置，可以像下面这样配置，注意不要把util:properties的内容提交到代码库里 -->
-<!-- 				<util:properties> -->
-<!-- 					<prop key="myTempConfigKey">tempConfigValue</prop> -->
-<!-- 				</util:properties> -->
+			对于本地临时要修改的配置，可以像下面这样配置
+				<util:properties>
+					<prop key="myTempConfigKey">tempConfigValue</prop>
+				</util:properties>
 				<bean class="java.util.Properties" factory-bean="xDiamondConfig"
 					factory-method="getProperties">
 				</bean>
 			</util:list>
-		</property>
+		</property> -->
 	</bean>
 
 	<context:component-scan base-package="io.github.xdiamond.example">
@@ -43,5 +43,6 @@
 	</bean>
 	
 	<bean class="io.github.xdiamond.example.listener.ListenerXmlBean"></bean>
+    <bean class="io.github.xdiamond.example.ClientExampleConfig"></bean>
 
 </beans>
