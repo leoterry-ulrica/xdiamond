@@ -78,7 +78,7 @@ public class AuthenticateController {
         Map<String, Object> groupInfo = Maps.newLinkedHashMap();
         groupInfo.put("groupId", group.getId());
         groupInfo.put("groupName", group.getName());
-        groupInfo.put("access", userGroup.getAccesses());
+        groupInfo.put("access", userGroup.getAccess());
         groupInfos.add(groupInfo);
       }
       authz.put("userGroups", groupInfos);

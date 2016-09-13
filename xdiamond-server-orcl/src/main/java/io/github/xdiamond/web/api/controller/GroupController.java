@@ -113,7 +113,7 @@ public class GroupController {
       @PathVariable Integer userId, @RequestBody UserGroup userGroup) {
     PermissionHelper.checkGroupUser(groupId);
 
-    userGroupService.addUser(groupId, userId, userGroup.getAccesses());
+    userGroupService.addUser(groupId, userId, userGroup.getAccess());
     return RestResult.success().withResult("message", "用户加入组成功").build();
   }
 

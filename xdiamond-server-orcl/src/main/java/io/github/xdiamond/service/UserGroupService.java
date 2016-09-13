@@ -58,7 +58,7 @@ public class UserGroupService {
     UserGroup userGroup = new UserGroup();
     userGroup.setUserId(userId);
     userGroup.setGroupId(groupId);
-    userGroup.setAccesses(access);
+    userGroup.setAccess(access);
     return userGroupMapper.insert(userGroup);
   }
 
@@ -92,7 +92,7 @@ public class UserGroupService {
     for (UserGroup userGroup : userGroupList) {
       User user = userMapper.selectByPrimaryKey(userGroup.getUserId());
       JSONObject json = (JSONObject) JSON.toJSON(user);
-      json.put("access", userGroup.getAccesses());
+      json.put("access", userGroup.getAccess());
       userAndAccessList.add(json);
     }
     return userAndAccessList;

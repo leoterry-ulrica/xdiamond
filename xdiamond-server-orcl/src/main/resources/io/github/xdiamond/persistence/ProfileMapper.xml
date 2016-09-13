@@ -9,7 +9,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="projectId" jdbcType="INTEGER" property="projectId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="accesses" jdbcType="INTEGER" property="accesses" />
+    <result column="accesses" jdbcType="INTEGER" property="access" />
     <result column="secretKey" jdbcType="VARCHAR" property="secretKey" />
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
@@ -145,7 +145,7 @@
     insert into profile (id,projectId, name, accesses, 
       secretKey, description, createTime, 
       updateDate)
-    values (#{id},#{projectId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{accesses,jdbcType=INTEGER}, 
+    values (#{id},#{projectId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{access,jdbcType=INTEGER}, 
       #{secretKey,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateDate,jdbcType=TIMESTAMP})
   </insert>
@@ -166,7 +166,7 @@
       <if test="name != null">
         name,
       </if>
-      <if test="accesses != null">
+      <if test="access != null">
         accesses,
       </if>
       <if test="secretKey != null">
@@ -190,8 +190,8 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="accesses != null">
-        #{accesses,jdbcType=INTEGER},
+      <if test="access != null">
+        #{access,jdbcType=INTEGER},
       </if>
       <if test="secretKey != null">
         #{secretKey,jdbcType=VARCHAR},
@@ -233,8 +233,8 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.accesses != null">
-        accesses = #{record.accesses,jdbcType=INTEGER},
+      <if test="record.access != null">
+        accesses = #{record.access,jdbcType=INTEGER},
       </if>
       <if test="record.secretKey != null">
         secretKey = #{record.secretKey,jdbcType=VARCHAR},
@@ -262,7 +262,7 @@
     set id = #{record.id,jdbcType=INTEGER},
       projectId = #{record.projectId,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      accesses = #{record.accesses,jdbcType=INTEGER},
+      accesses = #{record.access,jdbcType=INTEGER},
       secretKey = #{record.secretKey,jdbcType=VARCHAR},
       description = #{record.description,jdbcType=VARCHAR},
       createTime = #{record.createTime,jdbcType=TIMESTAMP},
@@ -284,8 +284,8 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="accesses != null">
-        accesses = #{accesses,jdbcType=INTEGER},
+      <if test="access != null">
+        accesses = #{access,jdbcType=INTEGER},
       </if>
       <if test="secretKey != null">
         secretKey = #{secretKey,jdbcType=VARCHAR},
@@ -310,7 +310,7 @@
     update profile
     set projectId = #{projectId,jdbcType=INTEGER},
       name = #{name,jdbcType=VARCHAR},
-      accesses = #{accesses,jdbcType=INTEGER},
+      accesses = #{access,jdbcType=INTEGER},
       secretKey = #{secretKey,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
       createTime = #{createTime,jdbcType=TIMESTAMP},

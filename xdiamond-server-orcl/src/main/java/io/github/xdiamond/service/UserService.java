@@ -65,7 +65,7 @@ public class UserService {
     groupMapper.insert(group);
     int result = userMapper.insert(user);
     UserGroup userGroup = new UserGroup();
-    userGroup.setAccesses(Access.OWNER);
+    userGroup.setAccess(Access.OWNER);
     userGroup.setGroupId(group.getId());
     userGroup.setUserId(user.getId());
     userGroupMapper.insert(userGroup);

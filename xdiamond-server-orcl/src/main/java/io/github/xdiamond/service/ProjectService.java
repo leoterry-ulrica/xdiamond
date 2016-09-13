@@ -40,16 +40,16 @@ public class ProjectService {
     Profile profile = new Profile();
     profile.setProjectId(project.getId());
     profile.setName("base");
-    profile.setAccesses(Access.MASTER);
+    profile.setAccess(Access.MASTER);
     profileService.insert(profile);
     profile.setName("test");
-    profile.setAccesses(Access.DEVELOPER);
+    profile.setAccess(Access.DEVELOPER);
     profileService.insert(profile);
     profile.setName("dev");
-    profile.setAccesses(Access.DEVELOPER);
+    profile.setAccess(Access.DEVELOPER);
     profileService.insert(profile);
     profile.setName("product");
-    profile.setAccesses(Access.MASTER);
+    profile.setAccess(Access.MASTER);
     //为product这个profile生成SecretKey
     profile.setSecretKey(RandomStringUtils.randomAlphanumeric(16));
     profileService.insert(profile);

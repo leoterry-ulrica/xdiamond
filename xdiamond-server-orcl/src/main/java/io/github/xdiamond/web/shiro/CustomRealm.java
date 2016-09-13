@@ -126,7 +126,7 @@ public class CustomRealm extends AuthorizingRealm implements Serializable {
           // 只有admin才有创建Group的权限
           // 只有group的owner有删除group的权限
           // 只有group的owner有组里的user的权限，包括增加/删除，列出组里的所有用户
-          if (userGroup.getAccesses() == Access.OWNER) {
+          if (userGroup.getAccess() == Access.OWNER) {
             PermissionHelper.addGroupDelete(authorization, userGroup.getGroupId());
             PermissionHelper.addGroupWrite(authorization, userGroup.getGroupId());
 
@@ -143,20 +143,20 @@ public class CustomRealm extends AuthorizingRealm implements Serializable {
             PermissionHelper.addProjectRead(authorization, project.getId());
 
             // 如果是owner，增加project的修改/删除权限，create权限
-            if (userGroup.getAccesses() == Access.OWNER) {
+            if (userGroup.getAccess() == Access.OWNER) {
               PermissionHelper.addProjectWrite(authorization, project.getId());
               PermissionHelper.addProjectDelete(authorization, project.getId());
             }
             // ==========Dependency的权限相关==============
             // 只有owner/master 有dependency的create权限
-            if (userGroup.getAccesses() >= Access.MASTER) {
+            if (userGroup.getAccess() >= Access.MASTER) {
               PermissionHelper.addDependencyCreate(authorization, project.getId());
             }
             for (Dependency dependency : dependencyService.list(project.getId())) {
               // 组里的有户，都有dependency read权限
               PermissionHelper.addDependencyRead(authorization, dependency.getId());
               // 只有owner/master，才有dependency write/delete 权限
-              if (userGroup.getAccesses() >= Access.MASTER) {
+              if (userGroup.getAccess() >= Access.MASTER) {
                 PermissionHelper.addDependencyWrite(authorization, dependency.getId());
                 PermissionHelper.addDependencyDelete(authorization, dependency.getId());
               }
@@ -164,14 +164,14 @@ public class CustomRealm extends AuthorizingRealm implements Serializable {
 
             // ===========Profile, Config权限相关==========
             // 只有access 是owner, master的才有 profile create 权限
-            if (userGroup.getAccesses() >= Access.MASTER) {
+            if (userGroup.getAccess() >= Access.MASTER) {
               PermissionHelper.addProfileCreate(authorization, project.getId());
             }
             // 如果用户的access >= profile的access，则用户对这个profile有read,write/delete,
             // 还有这个profile下面的config的所有权限
             // 这个权限统称为 control
             for (Profile profile : profileService.list(project.getId())) {
-              if (userGroup.getAccesses() >= profile.getAccesses()) {
+              if (userGroup.getAccess() >= profile.getAccess()) {
                 PermissionHelper.addProfileControll(authorization, profile.getId());
               }
             }
