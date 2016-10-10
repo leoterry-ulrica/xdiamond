@@ -3,6 +3,8 @@ package io.github.xdiamond.config;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 
+import java.io.IOException;
+
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,6 +34,12 @@ public class CacheConfig {
   @Bean(name = "ehCacheManager")
   public CacheManager cacheManager() {
     EhCacheManagerFactoryBean factoryBean = new EhCacheManagerFactoryBean();
+    try {
+		System.out.println(">>>ehCache.configPath : "+ehCacheConfig.getURL().getPath());
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     factoryBean.setConfigLocation(ehCacheConfig);
     factoryBean.afterPropertiesSet();
     CacheManager cacheManager = factoryBean.getObject();
