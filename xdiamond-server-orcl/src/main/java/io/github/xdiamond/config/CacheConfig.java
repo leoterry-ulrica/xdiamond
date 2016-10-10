@@ -34,12 +34,7 @@ public class CacheConfig {
   @Bean(name = "ehCacheManager")
   public CacheManager cacheManager() {
     EhCacheManagerFactoryBean factoryBean = new EhCacheManagerFactoryBean();
-    try {
-		System.out.println(">>>ehCache.configPath : "+ehCacheConfig.getURL().getPath());
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+
     factoryBean.setConfigLocation(ehCacheConfig);
     factoryBean.afterPropertiesSet();
     CacheManager cacheManager = factoryBean.getObject();
