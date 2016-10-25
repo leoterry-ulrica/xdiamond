@@ -303,7 +303,8 @@ public class XDiamondConfig {
       dir.mkdirs();
     }
     // 先保存到临时文件，再用renameTo 原子性地改名
-    File tempFile = File.createTempFile("config", ".tmp", dir);
+    // 修改：每次都覆盖到最新文件，否则会在临时目录下很多临时文件，如这样的格式：config4393612796429206.tmp
+    File tempFile = new File(dir + File.separator + "config.tmp" );//File.createTempFile("config", ".tmp", dir);
 
     FileOutputStream fos = null;
     try {
