@@ -3,8 +3,6 @@ package io.github.xdiamond.config;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 
-import java.io.IOException;
-
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
