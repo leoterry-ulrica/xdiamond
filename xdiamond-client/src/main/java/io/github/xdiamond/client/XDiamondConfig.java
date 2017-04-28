@@ -125,7 +125,7 @@ public class XDiamondConfig {
         logger.error("can not load xdiamond config from server! " + toProjectInfoString(),
             future.cause());
       }
-    } catch (InterruptedException | ExecutionException | TimeoutException | IOException e) {
+    } catch (Exception e) {
       logger.error("load xdiamond config from server error! " + toProjectInfoString(), e);
     }
     // 如果没有从服务器加载到配置，则从本地的备份读取
@@ -266,7 +266,8 @@ public class XDiamondConfig {
     String dir =
         localConfigPath + File.separator + groupId + File.separator + artifactId + File.separator
             + version + File.separator + profile;
-    String filePath = dir + File.separator + "config.json";
+    // TODO 原来版本默认加载文件为config.json的文件，但实际本地生成了config.tmp
+    String filePath = dir + File.separator + "config.tmp"; // config.json
     File file = new File(filePath);
     if (file.exists()) {
       FileInputStream fis = null;
