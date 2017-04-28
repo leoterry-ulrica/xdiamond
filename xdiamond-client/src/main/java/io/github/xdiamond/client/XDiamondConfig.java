@@ -101,9 +101,10 @@ public class XDiamondConfig {
     xDiamondClient =
         new XDiamondClient(this, serverHost, serverPort, bBackOffRetryInterval, maxRetryTimes,
             retryIntervalSeconds, maxRetryIntervalSeconds);
-    // 首先尝试连接服务器
-    ChannelFuture future = xDiamondClient.init();
+
     try {
+        // 首先尝试连接服务器
+        ChannelFuture future = xDiamondClient.init();
       // 如果连接服务器成功，则尝试获得配置
       boolean await = future.await(10, TimeUnit.SECONDS);
       if (await && future.isSuccess()) {
