@@ -1,5 +1,5 @@
 
-INSERT INTO xuser VALUES ('1', 'admin', 'admin', '8659c1f36193d2f8f062a4afe44c0d71f2a28d6997fe3207247f9485a8c5b5efa3c34f329e787be310cb31f4f1adc370057b538c4692838d3126cc544f53e369', 'djWHvtVYFI5pA5OviK1278joLYBXqnxM', 'admin@test.com', '2015-06-05 16:25:17', null, null, null, 'standard');
+INSERT INTO xuser VALUES ('1', 'admin', 'admin', '8659c1f36193d2f8f062a4afe44c0d71f2a28d6997fe3207247f9485a8c5b5efa3c34f329e787be310cb31f4f1adc370057b538c4692838d3126cc544f53e369', 'djWHvtVYFI5pA5OviK1278joLYBXqnxM', 'admin@test.com', sysdate, null, null, null, 'standard');
 
 INSERT INTO xgroup VALUES ('1', 'admin', 'admin');
 
