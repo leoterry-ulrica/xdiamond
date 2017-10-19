@@ -432,6 +432,7 @@
 	</dependencies>
 
 	<build>
+	    <finalName>gcc</finalName> 
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
