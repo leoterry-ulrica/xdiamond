@@ -118,8 +118,6 @@ public final class ThreadFactoryBuilder {
    * @param backingThreadFactory the backing {@link ThreadFactory} which will be delegated to during
    *        thread creation.
    * @return this for the builder pattern
-   * 
-   * @see MoreExecutors
    */
   public ThreadFactoryBuilder setThreadFactory(ThreadFactory backingThreadFactory) {
     this.backingThreadFactory = checkNotNull(backingThreadFactory);

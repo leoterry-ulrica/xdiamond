@@ -14,6 +14,19 @@
 		<spring.version>4.1.6.RELEASE</spring.version>
 	</properties>
 
+	<!-- 项目发布 begin -->
+	<distributionManagement>
+		<repository>
+			<id>distcentral</id>
+			<url>http://192.168.200.86:1234/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>distsnapshots</id>
+			<url>http://192.168.200.86:1234/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<!-- 项目发布 end -->
+	
 	<dependencies>
 		<dependency>
 			<groupId>io.github.dist.xdiamond</groupId>

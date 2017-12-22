@@ -14,7 +14,7 @@ public @interface OneKeyListener {
 	/**
 	 * XDiamond Config key.
 	 * 
-	 * @return
+	 * @return 返回键
 	 */
 	String key() default "";
 

@@ -149,8 +149,7 @@ public class XDiamondConfig {
 
   /**
    * only call by XDiamondClient，服务器通知Client配置有更新
-   * 
-   * @return
+   *
    */
   public void notifyConfigChanged() {
     timer.schedule(new GetConfigTask(this), 0);
